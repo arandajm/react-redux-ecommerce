@@ -4,9 +4,7 @@ import { getCurrencySymbol, convertCurrency } from "../currency";
 
 export default class Basket extends React.Component {
   render() {
-    const { items, total } = this.props;
-    // Access to the currency context
-    const { currency } = this.context;
+    const { items, total, currency } = this.props;
     return (
       <div>
         {items} items | {getCurrencySymbol(currency)}
@@ -16,7 +14,6 @@ export default class Basket extends React.Component {
   }
 }
 
-Basket.contextTypes = {
-  currency: PropTypes.string,
-  setCurrency: PropTypes.func
+Basket.propTypes = {
+  currency: PropTypes.string
 };

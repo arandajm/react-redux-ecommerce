@@ -1,8 +1,8 @@
-import React from 'react';
-import ProductListing from './ProductListing';
+import React from "react";
+import ProductListingContainer from "./ProductListingContainer";
 
 export default () => (
-    <div className="main-content">
-        <ProductListing />
-    </div>
+  <div className="main-content">
+    <ProductListingContainer />
+  </div>
 );

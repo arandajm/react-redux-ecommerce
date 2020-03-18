@@ -6,11 +6,11 @@ export default class CurrencySelector extends React.Component {
     const target = e.nativeEvent.target;
     const newCurrency = target.options[target.selectedIndex].value;
     // Call to setCurrency function in Page component to change currency
-    this.context.setCurrency(newCurrency);
+    this.props.currencyChanged(newCurrency);
   }
 
   render() {
-    const { currency } = this.context;
+    const { currency } = this.props;
     return (
       <div>
         <select defaultValue={currency} onChange={e => this.valueChanged(e)}>
@@ -22,7 +22,7 @@ export default class CurrencySelector extends React.Component {
   }
 }
 
-CurrencySelector.contextTypes = {
+CurrencySelector.propTypes = {
   currency: PropTypes.string,
-  setCurrency: PropTypes.func
+  currencyChanged: PropTypes.func
 };
